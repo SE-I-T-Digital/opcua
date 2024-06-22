@@ -294,12 +294,7 @@ impl TcpTransport {
         };
 
         let runtime = {
-            let mut builder = if !single_threaded_executor {
-                tokio::runtime::Builder::new_multi_thread()
-            } else {
-                tokio::runtime::Builder::new_current_thread()
-            };
-
+            let mut builder = tokio::runtime::Builder::new_current_thread();
             builder.enable_all().build().unwrap()
         };
 

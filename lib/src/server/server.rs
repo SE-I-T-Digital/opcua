@@ -234,11 +234,7 @@ impl Server {
         };
         let server_task = Self::new_server_task(server);
         // Launch
-        let mut builder = if !single_threaded_executor {
-            tokio::runtime::Builder::new_multi_thread()
-        } else {
-            tokio::runtime::Builder::new_current_thread()
-        };
+        let mut builder = tokio::runtime::Builder::new_current_thread();
         let runtime = builder.enable_all().build().unwrap();
         Self::run_server_on_runtime(runtime, server_task, true);
     }
