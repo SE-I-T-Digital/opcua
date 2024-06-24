@@ -46,10 +46,10 @@ log = "0.4"
 chrono = { version = "0.4", features = ["serde"] }
 # Enable deadlock_detection if there are any deadlocks in sync code
 
-# parking_lot = { git = "https://github.com/rodjjo/parking_lot.git", branch = "fix_was_last_thread" }
-# parking_lot_core = { git = "https://github.com/rodjjo/parking_lot.git", branch = "fix_was_last_thread" }
-parking_lot = { version = "10.0.0" }
-parking_lot_core = { version = "10.0.0" }
+# parking_lot = { git = "https://github.com/rodjjo/parking_lot.git", branch = "wasix" }
+# parking_lot_core = { git = "https://github.com/rodjjo/parking_lot.git", branch = "wasix" }
+parking_lot = { version = "^0.9.0" }
+parking_lot_core = { version = "^0.9.0" }
 futures = "0.3"
 tokio = { git = "https://github.com/wasix-org/tokio.git", branch="wasix-1.35.1", features = [ "io-util", "io-std","net", "rt",  "signal", "macros", "rt", "rt-multi-thread", "signal", "sync", "time"] }
 # tokio-rustls = { git = "https://github.com/wasix-org/tokio-rustls.git", branch = "wasix" }
